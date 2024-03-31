@@ -1,0 +1,23 @@
+<mat-card class="card">
+    <mat-card-content>
+        <div class="header-elements">
+            <div>
+                <h1>Audio y Vídeo</h1>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" routerLink="/add-p">Añadir Producto</button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card class="card">
+    <div class="productos-grid">
+        <div *ngFor="let producto of filterProducts()" class="producto">
+            <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="imagen-producto">
+            <div class="nombre">{{ producto.nombre }}</div>
+            <div class="precio">$ {{ producto.precio }}</div>
+            <button (click)="verDetalle(producto)" class="ver-detalle">Ver Detalle</button>
+            <button (click)="agregarAlCarrito(producto)" class="agregar-carrito">Agregar al carrito</button>
+        </div>
+    </div>
+</mat-card>
